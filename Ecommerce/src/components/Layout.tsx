@@ -1,6 +1,6 @@
 // src/components/Layout.tsx
 import Navbar from './layout/Navbar'
-import Footer from './layout/Footer'
+// import Footer from './layout/Footer'
 import '../styles/layout.scss'
 
 interface LayoutProps {
@@ -12,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="layout">
       <Navbar />
       <main className="main-content">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
