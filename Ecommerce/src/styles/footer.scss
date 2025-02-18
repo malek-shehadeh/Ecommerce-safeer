@@ -1,0 +1,156 @@
+// src/styles/footer.scss
+footer {
+    background-color: #fff;
+    padding-top: 3rem;
+  }
+  
+  .footer-content {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  .company-info {
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 1rem;
+    }
+  
+    .company-description {
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+  
+  .support-section {
+    h3 {
+      color: #8b185e;
+      margin-bottom: 1.5rem;
+    }
+  
+    .support-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  
+    .support-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+  
+      h4 {
+        color: #333;
+        margin-bottom: 0.25rem;
+      }
+  
+      p {
+        color: #666;
+      }
+    }
+  }
+  
+  .app-download {
+    h3 {
+      color: #8b185e;
+      margin-bottom: 1.5rem;
+    }
+  
+    .qr-section {
+      display: flex;
+      gap: 1rem;
+  
+      .qr-code {
+        width: 120px;
+        height: 120px;
+      }
+  
+      .app-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+  
+        img {
+          height: 36px;
+        }
+      }
+    }
+  }
+  
+  .footer-bottom {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  .social-section {
+    h4 {
+      color: #8b185e;
+      margin-bottom: 1rem;
+    }
+  
+    .social-links {
+      display: flex;
+      gap: 1rem;
+  
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  
+  .payment-methods {
+    h4 {
+      color: #8b185e;
+      margin-bottom: 1rem;
+    }
+  
+    .payment-icons {
+      display: flex;
+      gap: 1rem;
+  
+      img {
+        height: 24px;
+      }
+    }
+  }
+  
+  .copyright-bar {
+    background-color: #8b185e;
+    padding: 1rem 0;
+    color: white;
+  
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+  
+      a {
+        color: white;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }

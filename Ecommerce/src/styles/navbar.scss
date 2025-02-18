@@ -1,0 +1,185 @@
+// src/styles/navbar.scss
+header {
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 129px 0 135px;
+    // margin-left: 129px;
+
+    padding: 0 1rem;
+  }
+  
+  .navbar-top {
+    background-color: #8b185e;
+    padding: 0.75rem 0;
+  
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .logo {
+      img {
+        height: 30px;
+      }
+    }
+  
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  
+    .search-bar {
+      flex: 1;
+      display: flex;
+      height: 40px;
+  
+      .select-wrapper {
+        position: relative;
+        select {
+          height: 100%;
+          padding: 0 1rem;
+          border: none;
+          border-radius: 4px 0 0 4px;
+          background-color: white;
+          padding-right: 2rem; // مساحة للسهم
+      appearance: none; // إزالة السهم الافتراضي
+        }
+        .select-arrow {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            pointer-events: none; // لتجنب التداخل مع السيلكت
+          }
+        
+    
+      }
+  
+      input {
+        flex: 1;
+        border: none;
+        padding: 0 1rem;
+      }
+  
+      .search-btn {
+        width: 45px;
+        background-color: white;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: white;
+  
+      button {
+        background: none;
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+  
+      .icons-group {
+        display: flex;
+        gap: 1rem;
+  
+        button {
+          position: relative;
+          
+          .badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4081;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  
+  .navbar-bottom {
+    background-color: #731449;
+    padding: 0.5rem 0;
+  
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+  
+    .categories-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+  
+      .arrow-icon {
+        width: 12px;
+        height: 12px;
+        margin-left: 0.5rem;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  
+    .main-menu {
+      display: flex;
+      gap: 2rem;
+  
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
