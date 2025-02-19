@@ -1,0 +1,254 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Premium Wireless Mouse",
+        "category": "Keyboards, Mice",
+        "originalPrice": 79.99,
+        "discount": 25,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.5,
+        "color": "#004FC4",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 2,
+        "title": "Professional Video Capture Card",
+        "category": "Audio & Video",
+        "originalPrice": 199.99,
+        "discount": 15,
+        "image": "/Layer 2 2.svg",
+        "rating": 5,
+        "color": "#E5B800",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 3,
+        "title": "Blu-ray Disc Pack",
+        "category": "Blank Media",
+        "originalPrice": 45.99,
+        "discount": 35,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.8,
+        "color": "#E57A00",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 4,
+        "title": "Wireless Security Camera",
+        "category": "Cable Security Devices",
+        "originalPrice": 159.99,
+        "discount": 50,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.2,
+        "color": "#4D0099",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 5,
+        "title": "Professional Cleaning Kit",
+        "category": "Cleaning & Repair",
+        "originalPrice": 19.99,
+        "discount": 5,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.7,
+        "color": "#004FC4",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 6,
+        "title": "DisplayPort to HDMI Adapter",
+        "category": "Computer Cable Adapters",
+        "originalPrice": 29.99,
+        "discount": 75,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.9,
+        "color": "#E5B800",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 7,
+        "title": "Gaming Controller",
+        "category": "Game Hardware",
+        "originalPrice": 89.99,
+        "discount": 25,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.3,
+        "color": "#E57A00",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 8,
+        "title": "SSD Mounting Bracket",
+        "category": "Hard Drive Accessories",
+        "originalPrice": 14.99,
+        "discount": 15,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.1,
+        "color": "#4D0099",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 9,
+        "title": "512GB Memory Card",
+        "category": "Memory Cards",
+        "originalPrice": 129.99,
+        "discount": 35,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.6,
+        "color": "#004FC4",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 10,
+        "title": "Monitor Stand with USB Hub",
+        "category": "Monitor Accessories",
+        "originalPrice": 79.99,
+        "discount": 50,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.4,
+        "color": "#E5B800",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 11,
+        "title": "Printer Network Card",
+        "category": "Printer Accessories",
+        "originalPrice": 49.99,
+        "discount": 5,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.2,
+        "color": "#E57A00",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 12,
+        "title": "Color Ink Cartridge Set",
+        "category": "Printer Ink & Toner",
+        "originalPrice": 89.99,
+        "discount": 75,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.8,
+        "color": "#4D0099",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 13,
+        "title": "Scanner Document Feeder",
+        "category": "Scanner Accessories",
+        "originalPrice": 149.99,
+        "discount": 25,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.5,
+        "color": "#004FC4",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      },
+      {
+        "id": 14,
+        "title": "10-Port USB 3.0 Hub",
+        "category": "USB Hubs",
+        "originalPrice": 59.99,
+        "discount": 15,
+        "image": "/Layer 2 2.svg",
+        "rating": 4.7,
+        "color": "#E5B800",
+        "icons": {
+          "wishlist": true,
+          "compare": true,
+          "quickView": true,
+          "addToCart": true
+        }
+      }
+    ],
+    "categories": [
+      "Audio & Video",
+      "Blank Media",
+      "Cable Security Devices",
+      "Cleaning & Repair",
+      "Computer Cable Adapters",
+      "Game Hardware",
+      "Hard Drive Accessories",
+      "Keyboards, Mice",
+      "Memory Cards",
+      "Monitor Accessories",
+      "Printer Accessories",
+      "Printer Ink & Toner",
+      "Scanner Accessories",
+      "USB Hubs"
+    ],
+    "discounts": [5, 15, 25, 35, 50, 75,80,85,90],
+    "priceRanges": [
+      "Under $25",
+      "$25 to $50",
+      "$50 to $100",
+      "$100 to $200",
+      "$200 & Above"
+    ],
+    "colors": ["#004FC4", "#E5B800", "#E57A00", "#E57A00", "#4D0099"],
+    "ratings": [1, 2, 3, 4, 5]
+  }

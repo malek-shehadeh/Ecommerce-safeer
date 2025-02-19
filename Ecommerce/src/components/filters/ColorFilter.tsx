@@ -1,17 +1,15 @@
 // src/components/filters/ColorFilter.tsx
-import { useState } from 'react'
+// import { useState } from 'react'
 
-const ColorFilter = () => {
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+// src/components/filters/ColorFilter.tsx
+// src/components/filters/ColorFilter.tsx
+interface Props {
+  colors: string[];
+  selectedColors: string[];
+  onColorChange: (color: string) => void;
+}
 
-  const colors = [
-    { id: 'blue', value: '#0066CC' },
-    { id: 'yellow', value: '#FFD700' },
-    { id: 'orange', value: '#FF8C00' },
-    { id: 'turquoise', value: '#40E0D0' },
-    { id: 'purple', value: '#800080' }
-  ];
-
+const ColorFilter: React.FC<Props> = ({ colors, selectedColors, onColorChange }) => {
   return (
     <div className="filter-section">
       <div className="filter-header">
@@ -25,11 +23,11 @@ const ColorFilter = () => {
         <div className="color-options">
           {colors.map((color) => (
             <button
-              key={color.id}
-              className={`color-box ${selectedColor === color.id ? 'selected' : ''}`}
-              style={{ backgroundColor: color.value }}
-              onClick={() => setSelectedColor(selectedColor === color.id ? null : color.id)}
-              aria-label={`Select ${color.id} color`}
+              key={color}
+              className={`color-box ${selectedColors.includes(color) ? 'selected' : ''}`}
+              style={{ backgroundColor: color }}
+              onClick={() => onColorChange(color)}
+              aria-label={`Select color ${color}`}
             />
           ))}
         </div>

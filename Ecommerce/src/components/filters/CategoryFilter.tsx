@@ -1,86 +1,34 @@
 // src/components/filters/CategoryFilter.tsx
-import './filters.scss'
+// import './filters.scss'
+import React from 'react'
+// src/components/filters/CategoryFilter.tsx
+// src/components/filters/CategoryFilter.tsx
+interface Props {
+  categories: string[];
+  selectedCategories: string[];
+  onCategoryChange: (category: string) => void;
+}
 
-const CategoryFilter = () => {
+const CategoryFilter: React.FC<Props> = ({ categories, selectedCategories, onCategoryChange }) => {
   return (
     <div className="filter-section">
       <div className="filter-header">
         <h3>Categories</h3>
-       
       </div>
       
       <div className="filter-content">
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Audio & Video</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Blank Media</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Cable Security Devices</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Cleaning & Repair</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Computer Cable Adapters</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Game Hardware</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Hard Drive Accessories</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Keyboards, Mice, Mouse</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Memory Cards</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Monitor Accessories</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>Printer Ink & Toner</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
-        <label className="filter-item">
-          <input type="checkbox" />
-          <span>USB Hubs</span>
-        </label>
+        {categories.map((category) => (
+          <label key={category} className="filter-item">
+            <input
+              type="checkbox"
+              checked={selectedCategories.includes(category)}
+              onChange={() => onCategoryChange(category)}
+            />
+            <span>{category}</span>
+          </label>
+        ))}
       </div>
     </div>
   )
 }
-
 export default CategoryFilter

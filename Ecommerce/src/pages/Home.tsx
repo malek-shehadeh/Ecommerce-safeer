@@ -1,6 +1,8 @@
 // src/pages/Home.tsx
 import Filters from '../components/Filters'
 import '../styles/home.scss'
+import filterData from '../data/products.json';
+
 
 const Home = () => {
   return (
@@ -29,8 +31,13 @@ const Home = () => {
           
           <div className="content-layout">
             <aside className="filters-sidebar">
-              <Filters />
-            </aside>
+            <Filters 
+  filterData={filterData}
+  onFilterChange={(filters) => {
+    // معالجة التغييرات في الفلترة
+    console.log('Applied filters:', filters);
+  }}
+/>            </aside>
             
             <main className="products-content">
               {/* سيتم إضافة المنتجات هنا لاحقاً */}
