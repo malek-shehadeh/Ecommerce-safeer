@@ -1,9 +1,6 @@
 // src/components/filters/DiscountFilter.tsx
-// src/components/filters/DiscountFilter.tsx
-
 import React from 'react'
 import './filters.scss'
-// src/components/filters/DiscountFilter.tsx
 interface Props {
   discounts: number[];
   selectedDiscounts: number[];

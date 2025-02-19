@@ -1,5 +1,4 @@
 // src/components/filters/RateFilter.tsx
-// import { useState } from 'react'
 
 interface Props {
   ratings: number[];
@@ -12,7 +11,7 @@ const RateFilter: React.FC<Props> = ({ ratings, selectedRatings, onRateChange })
     id: rate,
     goldStars: rate,
     label: '& Up'
-  })).sort((a, b) => b.id - a.id); // ترتيب تنازلي
+  })).sort((a, b) => b.id - a.id); 
 
   return (
     <div className="filter-section">

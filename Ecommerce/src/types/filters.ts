@@ -1,8 +1,6 @@
 // src/types/filters.ts
-// src/types/filters.ts
 export type FilterTypes = 'categories' | 'discounts' | 'priceRanges' | 'colors' | 'ratings';
 
-// src/types/filters.ts
 export interface FilterState {
     categories: string[];
     discounts: number[];
