@@ -1,116 +1,194 @@
 // src/styles/home.scss
 .home-page {
   background-color: #FFFFFF;
-}
-  
-  // .container {
-  //   // max-width: 1300px;
-  //   // margin: 0 auto;
-  //   padding: 0 1rem;
-  // }
-  
-  // Hero Section
-  .hero {
-    background-color: #f5f5f5;
-    padding: 3rem 0;
-    background-image: url('https://s3-alpha-sig.figma.com/img/d8e7/a6ba/de47b36f3c78fc2985b33d70624ab5ab?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cD4uAJP8JNVEacxwt6dEiVfU0WZWXDRiHBx6PnA4F1IAmAeOe4PEsringMji3dZ7iMJdcCuVfmS9qPKhJic9NDtREuDmR94GxclYyHsivXiYdeEfYjZU3ZgfTMsXvm-aCDnFJYTNlVDTQ7wnVC1hZq~gcRVJfAuoldY3jxjm8XoB-b67aHzcUb4Eox82TtcDDWT1-9DykrU5lLNkhjmCxsU1MfhlRxLpaWPj2H0BnJ5ZqVgD5lE3DO5-CgZVSiLve94uLR73DQEQAhtGlua3bHzSIhgP5Wh23MUh8bmOsDNI0Z3TWVYmYZdDT4W-8~BPOlrRPMf6KKE3EGP6~-Aipw__');
-    background-size: cover;
-    background-position: center;
-    height: 22.313125rem;
-
-  
-    .hero-content {
-      // max-width: 600px;
-      color: #752157;
-      margin-left: 312px;
-
-  
-      h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        
-        span {
-          display: block;
-          color: #8b185e;
-        }
+ }
+ 
+//  .container {
+//   max-width: 82.5rem; // 1320px
+//   margin: 0 auto;
+//   padding: 0 1rem;
+//  }
+ 
+ // Hero Section 
+ .hero {
+  background-color: #f5f5f5;
+  padding: 3rem 0;
+  background-image: url('https://s3-alpha-sig.figma.com/img/d8e7/a6ba/de47b36f3c78fc2985b33d70624ab5ab?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cD4uAJP8JNVEacxwt6dEiVfU0WZWXDRiHBx6PnA4F1IAmAeOe4PEsringMji3dZ7iMJdcCuVfmS9qPKhJic9NDtREuDmR94GxclYyHsivXiYdeEfYjZU3ZgfTMsXvm-aCDnFJYTNlVDTQ7wnVC1hZq~gcRVJfAuoldY3jxjm8XoB-b67aHzcUb4Eox82TtcDDWT1-9DykrU5lLNkhjmCxsU1MfhlRxLpaWPj2H0BnJ5ZqVgD5lE3DO5-CgZVSiLve94uLR73DQEQAhtGlua3bHzSIhgP5Wh23MUh8bmOsDNI0Z3TWVYmYZdDT4W-8~BPOlrRPMf6KKE3EGP6~-Aipw__');
+  background-size: cover;
+  background-position: center;
+  height: 22.313125rem; 
+ 
+  .hero-content {
+    color: #752157;
+    margin-left: 19.5rem; 
+ 
+    h1 {
+      font-size: 2.5rem; 
+      margin-bottom: 1rem;
+      font-weight: 700;
+      
+      span {
+        display: block;
+        color: #8b185e;
       }
-  
-      h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-      }
-  
-      p {
-        color: #666;
-        margin-bottom: 2rem;
-      }
-  
-      .discover-btn {
-        background: #8b185e;
-        color: white;
-        border: none;
-        padding: 0.75rem 2rem;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-  
-        &:hover {
-          background: #731449;
-        }
+    }
+ 
+    h2 {
+      font-size: 1.8rem; 
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+ 
+    p {
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 37.5rem; 
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+ 
+    .discover-btn {
+      background: #8b185e;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s ease;
+ 
+      &:hover {
+        background: #731449;
       }
     }
   }
-  
-  // Products Section
-  .products-section {
+ }
+ 
+ // Products Section
+ .products-section {
+  padding: 2rem 0;
+ 
+  .products-header {
+    margin-bottom: 2rem;
+    
+    h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+ 
+    .items-count {
+      color: #666;
+      font-size: 0.9rem;
+    }
+  }
+ 
+  .content-layout {
+    display: grid;
+    grid-template-columns: 17.5rem 1fr; 
+    gap: 2rem;
+  }
+ 
+  .products-content {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.1);
+    width: 100%;
+  }
+ }
+ 
+ // Products Grid
+ .products-grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 59.8125rem; // 957px
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 13.824375rem); 
+  justify-content: space-between;
+ 
+  // شاشات متوسطة
+  @media (max-width: 62rem) { // 992px
+    width: 44.238rem; // 707.81px (3 cards + gaps)
+    grid-template-columns: repeat(3, 13.824375rem);
+  }
+ 
+  // شاشات صغيرة
+  @media (max-width: 48rem) { // 768px
+    width: 29.14875rem; // 466.38px (2 cards + gap)
+    grid-template-columns: repeat(2, 13.824375rem);
+  }
+ 
+  // موبايل
+  @media (max-width: 31.25rem) { 
+    width: 13.824375rem; 
+    grid-template-columns: 13.824375rem;
+  }
+ }
+ 
+ // Responsive
+ @media (max-width: 82.5rem) { 
+  .container {
+    padding: 0 2rem;
+  }
+ }
+ 
+ @media (max-width: 64rem) { 
+  .hero {
+    .hero-content {
+      margin-left: 10rem;
+    }
+  }
+ }
+ 
+ @media (max-width: 48rem) { 
+  .hero {
     padding: 2rem 0;
-  
-    .products-header {
-      margin-bottom: 2rem;
+    
+    .hero-content {
+      margin-left: 2rem;
+      padding-top: 2rem;
+ 
+      h1 {
+        font-size: 2rem;
+      }
       
       h2 {
         font-size: 1.5rem;
-        color: #333;
-        margin-bottom: 0.5rem;
       }
-  
-      .items-count {
-        color: #666;
-        font-size: 0.9rem;
+ 
+      p {
+        max-width: 100%;
       }
-    }
-  
-    .content-layout {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 2rem;
-    }
-  
-    .products-content {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
   }
-  
-  // Responsive
-  @media (max-width: 768px) {
-    .hero {
-      padding: 2rem 0;
+ 
+  .container {
+    padding: 0 1rem;
+  }
+ 
+  .content-layout {
+    grid-template-columns: 1fr !important;
+  }
+ 
+  .products-grid {
+    justify-content: center;
+  }
+ }
+ 
+ @media (max-width: 30rem) { 
+  .hero {
+    .hero-content {
+      margin-left: 1rem;
       
-      .hero-content {
-        h1 {
-          font-size: 2rem;
-        }
-        
-        h2 {
-          font-size: 1.5rem;
-        }
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      h2 {
+        font-size: 1.25rem;
       }
     }
-  
-    .content-layout {
-      grid-template-columns: 1fr !important;
-    }
   }
+ }
