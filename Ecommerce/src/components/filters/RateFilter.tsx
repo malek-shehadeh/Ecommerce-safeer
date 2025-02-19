@@ -1,25 +1,18 @@
 // src/components/filters/RateFilter.tsx
-import { useState } from 'react'
+// import { useState } from 'react'
 
-const RateFilter = () => {
-  const [selectedRates, setSelectedRates] = useState<number[]>([]);
+interface Props {
+  ratings: number[];
+  selectedRatings: number[];
+  onRateChange: (rating: number) => void;
+}
 
-  const rateOptions = [
-    { id: 4, goldStars: 4, label: '& Up' },
-    { id: 3, goldStars: 3, label: '& Up' },
-    { id: 2, goldStars: 2, label: '& Up' },
-    { id: 1, goldStars: 1, label: '& Up' }
-  ];
-
-  const handleRateChange = (rateId: number) => {
-    setSelectedRates(prev => {
-      if (prev.includes(rateId)) {
-        return prev.filter(id => id !== rateId);
-      } else {
-        return [...prev, rateId];
-      }
-    });
-  };
+const RateFilter: React.FC<Props> = ({ ratings, selectedRatings, onRateChange }) => {
+  const rateOptions = ratings.map(rate => ({
+    id: rate,
+    goldStars: rate,
+    label: '& Up'
+  })).sort((a, b) => b.id - a.id); // ترتيب تنازلي
 
   return (
     <div className="filter-section">
@@ -35,8 +28,8 @@ const RateFilter = () => {
           <label key={option.id} className="filter-item">
             <input 
               type="checkbox"
-              checked={selectedRates.includes(option.id)}
-              onChange={() => handleRateChange(option.id)}
+              checked={selectedRatings.includes(option.id)}
+              onChange={() => onRateChange(option.id)}
             />
             <div className="rate-group">
               <div className="stars">
@@ -47,7 +40,7 @@ const RateFilter = () => {
                     alt="star"
                     className={`
                       ${index < option.goldStars ? 'gold-star' : 'empty-star'}
-                      ${selectedRates.includes(option.id) && index < option.goldStars ? 'black-star' : ''}
+                      ${selectedRatings.includes(option.id) && index < option.goldStars ? 'black-star' : ''}
                     `}
                   />
                 ))}
