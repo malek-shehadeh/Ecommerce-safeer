@@ -13,7 +13,7 @@ const Home = () => {
               Discover <span>A Range Of Products</span>
             </h1>
             <h2>For Gaming Professionals</h2>
-            <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry...</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
             <button className="discover-btn">Discover Now</button>
           </div>
         </div>
