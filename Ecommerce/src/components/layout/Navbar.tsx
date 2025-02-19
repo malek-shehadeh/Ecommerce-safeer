@@ -1,18 +1,28 @@
+
+
 // src/components/layout/Navbar.tsx
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import '../../styles/navbar.scss'
 
 const Navbar = () => {
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
+  const compareItems = useSelector((state: RootState) => state.compare.items);
+  
+  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const wishlistItemsCount = wishlistItems.length;
+  const compareItemsCount = compareItems.length;
+
   return (
     <header>
       <div className="navbar-top">
         <div className="container">
           <div className="logo">
-            {/* ضع هنا شعار Safeer */}
             <img src="/image 2.png" alt="Safeer" />
           </div>
 
           <div className="location">
-            {/* أيقونة الموقع */}
             <img src="/location.svg" alt="location" />
             <span>Deliver To Jordan</span>
           </div>
@@ -31,34 +41,28 @@ const Navbar = () => {
           </div>
 
           <div className="actions">
-            {/* أيقونة العربية */}
             <button className="lang">
               <img className="iconlan" src="/language-square.svg" alt="arabic" />
               <span className="languge">العربية</span>
             </button>
             
-            {/* أيقونة تسجيل الدخول */}
             <button className="auth">
               <img src="/profile-circle.svg" alt="user" />
               <span className="login">Login / Sign up</span>
             </button>
 
             <div className="icons-group">
-              {/* أيقونة التبديل */}
               <button className="arrange">
                 <img src="/arrange-circle-2.svg" alt="arrange" />
-                <span className="badge">0</span>
+                <span className="badge">{compareItemsCount}</span>
               </button>
-              {/* أيقونة المفضلة */}
               <button className="wishlist">
                 <img src="/heart.svg" alt="wishlist" />
-                <span className="badge">0</span>
+                <span className="badge">{wishlistItemsCount}</span>
               </button>
-
-              {/* أيقونة عربة التسوق */}
               <button className="cart">
                 <img src="/bag.svg" alt="cart" />
-                <span className="badge">0</span>
+                <span className="badge">{cartItemsCount}</span>
               </button>
             </div>
           </div>
@@ -71,7 +75,6 @@ const Navbar = () => {
             <img src="/category-2.svg" alt="menu" />
             <span className="categorie">All Categories</span>
             <img src="/Vector.svg" alt="arrow" className="arrow-icon" />
-
           </button>
 
           <nav className="main-menu">

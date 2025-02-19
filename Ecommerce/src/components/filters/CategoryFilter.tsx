@@ -1,8 +1,5 @@
 // src/components/filters/CategoryFilter.tsx
-// import './filters.scss'
 import React from 'react'
-// src/components/filters/CategoryFilter.tsx
-// src/components/filters/CategoryFilter.tsx
 interface Props {
   categories: string[];
   selectedCategories: string[];

@@ -1,9 +1,7 @@
 // src/components/filters/PriceFilter.tsx
-// src/components/filters/PriceFilter.tsx
 
 import React from 'react'
 
-// src/components/filters/PriceFilter.tsx
 interface Props {
   priceRanges: string[];
   selectedRanges: string[];

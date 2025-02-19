@@ -1,8 +1,4 @@
 // src/components/filters/ColorFilter.tsx
-// import { useState } from 'react'
-
-// src/components/filters/ColorFilter.tsx
-// src/components/filters/ColorFilter.tsx
 interface Props {
   colors: string[];
   selectedColors: string[];
