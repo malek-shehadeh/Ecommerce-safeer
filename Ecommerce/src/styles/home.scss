@@ -1,25 +1,29 @@
 // src/styles/home.scss
 .home-page {
-    background-color: #f5f5f5;
-  }
+  background-color: #FFFFFF;
+}
   
-  .container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+  // .container {
+  //   // max-width: 1300px;
+  //   // margin: 0 auto;
+  //   padding: 0 1rem;
+  // }
   
   // Hero Section
   .hero {
     background-color: #f5f5f5;
     padding: 3rem 0;
-    background-image: url('/hero-bg.jpg');
+    background-image: url('https://s3-alpha-sig.figma.com/img/d8e7/a6ba/de47b36f3c78fc2985b33d70624ab5ab?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cD4uAJP8JNVEacxwt6dEiVfU0WZWXDRiHBx6PnA4F1IAmAeOe4PEsringMji3dZ7iMJdcCuVfmS9qPKhJic9NDtREuDmR94GxclYyHsivXiYdeEfYjZU3ZgfTMsXvm-aCDnFJYTNlVDTQ7wnVC1hZq~gcRVJfAuoldY3jxjm8XoB-b67aHzcUb4Eox82TtcDDWT1-9DykrU5lLNkhjmCxsU1MfhlRxLpaWPj2H0BnJ5ZqVgD5lE3DO5-CgZVSiLve94uLR73DQEQAhtGlua3bHzSIhgP5Wh23MUh8bmOsDNI0Z3TWVYmYZdDT4W-8~BPOlrRPMf6KKE3EGP6~-Aipw__');
     background-size: cover;
     background-position: center;
+    height: 22.313125rem;
+
   
     .hero-content {
-      max-width: 600px;
-      color: #333;
+      // max-width: 600px;
+      color: #752157;
+      margin-left: 312px;
+
   
       h1 {
         font-size: 2.5rem;

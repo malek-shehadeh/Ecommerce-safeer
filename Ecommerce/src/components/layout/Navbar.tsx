@@ -33,14 +33,14 @@ const Navbar = () => {
           <div className="actions">
             {/* أيقونة العربية */}
             <button className="lang">
-              <img src="/language-square.svg" alt="arabic" />
-              <span>العربية</span>
+              <img className="iconlan" src="/language-square.svg" alt="arabic" />
+              <span className="languge">العربية</span>
             </button>
             
             {/* أيقونة تسجيل الدخول */}
             <button className="auth">
               <img src="/profile-circle.svg" alt="user" />
-              <span>Login / Sign up</span>
+              <span className="login">Login / Sign up</span>
             </button>
 
             <div className="icons-group">
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="container">
           <button className="categories-btn">
             <img src="/category-2.svg" alt="menu" />
-            <span>All Categories</span>
+            <span className="categorie">All Categories</span>
             <img src="/Vector.svg" alt="arrow" className="arrow-icon" />
 
           </button>
