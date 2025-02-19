@@ -1,0 +1,127 @@
+// src/components/products/ProductCard.scss
+.product-card {
+    width: 13.824375rem; 
+    height: 25.320625rem;
+    border-radius: 0.5rem;
+    background: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: translateY(-0.25rem);
+    }
+  
+    .product-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      padding: 1rem;
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+  
+      .wishlist-btn {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+  
+        &.active img {
+          filter:  brightness(70%) ;
+        }
+      }
+    }
+  
+    .product-info {
+      height: 10.43875rem; 
+      padding: 1rem;
+  
+      .product-title {
+        font-family: Almarai, sans-serif;
+        font-weight: 700;
+        font-size: 0.875rem; 
+        line-height: 1.25rem; 
+        color: #515151;
+        margin-bottom: 0.5rem;
+        display: -webkit-box;
+        // -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+  
+      .product-price {
+        margin-bottom: 1rem;
+  
+        .current-price {
+          font-family: Almarai, sans-serif;
+          font-weight: 700;
+          font-size: 1.4375rem;
+          line-height: 2.5rem; 
+          color: #752157;
+          display: block;
+        }
+  
+        .original-price-container {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+  
+          .original-price {
+            font-family: Almarai, sans-serif;
+            font-weight: 400;
+            font-size: 0.875rem; 
+            line-height: 2.5rem; 
+            color: #767676;
+            text-decoration: line-through;
+          }
+  
+          .discount {
+            font-family: Almarai, sans-serif;
+            font-weight: 400;
+            font-size: 0.875rem; 
+            line-height: 2.5rem; 
+            color: #069644;
+          }
+        }
+      }
+  
+      .product-actions {
+        height: 2.3275rem; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .product-icons {
+          display: flex;
+          gap: 0.775625rem; 
+  
+          .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+          }
+        }
+  
+        .product-rating {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+  
+        
+  
+          span {
+            font-family: Almarai, sans-serif;
+            font-size: 0.875rem;
+            color: #515151;
+          }
+        }
+      }
+    }
+  }
