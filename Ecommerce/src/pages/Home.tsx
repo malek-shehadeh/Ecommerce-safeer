@@ -1,13 +1,16 @@
 
 // src/pages/Home.tsx
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Filters from '../components/Filters'
+import FilterBar from '../components/FilterBar'
+import Pagination from '../components/Pagination'
 import ProductCard from '../components/products/ProductCard'
 import { FilterState } from '../types/filters'
 import '../styles/home.scss'
 import filterData from '../data/products.json'
 
 const Home = () => {
+  // States
   const [appliedFilters, setAppliedFilters] = useState<FilterState>({
     categories: [],
     discounts: [],
@@ -15,8 +18,15 @@ const Home = () => {
     colors: [],
     ratings: []
   });
+  const [sortType, setSortType] = useState('recommended');
+  const [itemsPerPage, setItemsPerPage] = useState(50);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // وظيفة لتحويل نطاق السعر إلى حدود رقمية
+  // Reset page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [appliedFilters, sortType, itemsPerPage]);
+
   const getPriceRange = (range: string): [number, number] => {
     switch (range) {
       case 'Under $25':
@@ -34,34 +44,30 @@ const Home = () => {
     }
   };
 
-  // تصفية المنتجات باستخدام useMemo لتحسين الأداء
+  // Filter and sort products
   const filteredProducts = useMemo(() => {
-    return filterData.products.filter(product => {
-      // تصفية حسب الفئة
+    // Filter products
+    const filtered = filterData.products.filter(product => {
       if (appliedFilters.categories.length > 0 && 
           !appliedFilters.categories.includes(product.category)) {
         return false;
       }
 
-      // تصفية حسب الخصم
       if (appliedFilters.discounts.length > 0 && 
           !appliedFilters.discounts.includes(product.discount)) {
         return false;
       }
 
-      // تصفية حسب اللون
       if (appliedFilters.colors.length > 0 && 
           !appliedFilters.colors.includes(product.color)) {
         return false;
       }
 
-      // تصفية حسب التقييم
       if (appliedFilters.ratings.length > 0 && 
           !appliedFilters.ratings.some(rating => Math.floor(product.rating) === rating)) {
         return false;
       }
 
-      // تصفية حسب نطاق السعر
       if (appliedFilters.priceRanges.length > 0) {
         const price = product.originalPrice;
         const isInAnyRange = appliedFilters.priceRanges.some(range => {
@@ -73,15 +79,33 @@ const Home = () => {
 
       return true;
     });
-  }, [appliedFilters]);
 
-  const handleFilterChange = (filters: FilterState) => {
-    setAppliedFilters(filters);
-  };
+    // Sort products
+    return filtered.sort((a, b) => {
+      switch (sortType) {
+        case 'alphabetical':
+          return a.title.localeCompare(b.title);
+        case 'price-asc':
+          return a.originalPrice - b.originalPrice;
+        case 'price-desc':
+          return b.originalPrice - a.originalPrice;
+        default:
+          return 0;
+      }
+    });
+  }, [appliedFilters, sortType]);
 
+  // Get paginated products
+  const paginatedProducts = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return filteredProducts.slice(startIndex, endIndex);
+  }, [filteredProducts, currentPage, itemsPerPage]);
+
+  // Calculate total pages
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   return (
     <div className="home-page">
-      {/* Hero Section */}
       <section className="hero">
         <div className="container">
           <div className="hero-content">
@@ -95,27 +119,31 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Products Section */}
       <section className="products-section">
         <div className="container">
           <div className="products-header">
             <h2>Computers</h2>
-            <span className="items-count">
-              {filteredProducts.length} Items
-            </span>
           </div>
           
+          <FilterBar
+            totalItems={filteredProducts.length}
+            onSortChange={setSortType}
+            onDisplayChange={setItemsPerPage}
+            currentSort={sortType}
+            currentDisplay={itemsPerPage}
+          />
+
           <div className="content-layout">
-            <aside className="filters-sidebar">
+            <div className="filters-sidebar">
               <Filters 
                 filterData={filterData}
-                onFilterChange={handleFilterChange}
+                onFilterChange={setAppliedFilters}
               />
-            </aside>
+            </div>
             
-            <main className="products-content">
+            <div className="products-content">
               <div className="products-grid">
-                {filteredProducts.map((product) => (
+                {paginatedProducts.map((product) => (
                   <ProductCard
                     key={product.id}
                     id={product.id}
@@ -127,7 +155,17 @@ const Home = () => {
                   />
                 ))}
               </div>
-            </main>
+              
+              {totalPages > 1 && (
+                <div className="pagination-container">
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
