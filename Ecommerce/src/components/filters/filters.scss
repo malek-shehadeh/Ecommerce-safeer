@@ -41,9 +41,9 @@
 // Filter Container and Sidebar
 .filters-sidebar {
   @media (min-width: 1400px) {
-    position: sticky;
+    // position: sticky;
     left: 312px;
-    width: 280px;
+    width: 298px;
     top: 1rem;
     height: fit-content;
     z-index: 10;
@@ -66,11 +66,11 @@
 .filters-container {
   background: #fff;
   border-radius: 8px;
-  padding: 1rem;
+  // padding: 1rem;
   width: 100%;
   
   @media (min-width: 768px) {
-    width: 280px;
+    width: 298px;
     position: sticky;
     top: 1rem;
   }
@@ -99,12 +99,13 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.875rem;
+
     border-bottom: 1px solid #eee;
 
     h2 {
       font-size: 1.875rem;
-      color: #515151;
+      color: rgba(81, 81, 81, 1);
       font-weight: 700;
     }
 
@@ -115,11 +116,14 @@
     }
 
     .reset-btn {
-      color: #8b185e;
+      color: rgba(117, 33, 87, 1);
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 0.9rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-top: 14px;
+
 
       &:hover {
         text-decoration: underline;
@@ -145,18 +149,23 @@
 // Filter Section Styles
 .filter-section {
   border-bottom: 1px solid #eee;
-  padding: 1rem 0;
+  // padding: 1rem 0;
 
   .filter-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3.5rem;
+    margin-top: -4px;
+
 
     h3 {
-      font-size: 1rem;
-      color: #333;
-      font-weight: 500;
+      font-size: 1.5625rem;
+      color: rgba(81, 81, 81, 1);
+      font-weight: 400;
+      line-height: 1.875rem;
+      font-family: Almarai, sans-serif;
+
     }
 
     .expand-btn {
@@ -175,10 +184,11 @@
   .filter-content {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    max-height: 350px;
+    gap: 0.8125rem;
+    max-height: 425px;
     overflow-y: auto;
     padding-right: 8px;
+    margin-bottom: 42px;
 
     &::-webkit-scrollbar {
       width: 6px;
@@ -202,7 +212,7 @@
   .filter-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
     cursor: pointer;
 
     input[type="checkbox"] {
@@ -212,8 +222,11 @@
     }
 
     span {
-      color: #666;
-      font-size: 0.9rem;
+      color:rgba(81, 81, 81, 1);
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: Almarai, sans-serif;
+
     }
 
     &:hover {
@@ -258,7 +271,13 @@
   }
 
   // Rating Stars
+  .rate-group {
+    display: flex;
+        justify-content: space-between;
+        gap: 10.25px;
+  }
   .stars {
+  
     display: flex;
     gap: 2px;
     
@@ -295,9 +314,9 @@
 // Color Options
 .color-options {
   display: flex;
-  gap: 1rem;
-  padding: 0.5rem 0;
-  margin-left: 0.30rem;
+  gap: 1.1875rem;  
+    padding: 0.5rem 0;
+    margin-left: 8px;
   
   @media (max-width: 767px) {
     flex-wrap: wrap;
@@ -316,14 +335,14 @@
 
   &.selected {
     &::after {
-      content: '';
+      content: "";
       position: absolute;
-      top: -3px;
-      left: -3px;
-      right: -3px;
-      bottom: -3px;
-      border: 2px solid #8b185e;
-      border-radius: 6px;
+      top: -6px;
+      left: -6px;
+      right: -6px;
+      bottom: -6px;
+      border: 1px solid rgba(117, 33, 87, 1);
+      border-radius: 4px;
     }
   }
 

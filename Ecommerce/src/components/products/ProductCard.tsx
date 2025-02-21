@@ -13,6 +13,8 @@ interface ProductCardProps {
   originalPrice: number;
   discount: number;
   rating: number;
+  isNew?: boolean; 
+
 }
 
 const ProductCard: FC<ProductCardProps> = ({
@@ -22,6 +24,8 @@ const ProductCard: FC<ProductCardProps> = ({
   originalPrice,
   discount,
   rating,
+  isNew, 
+
 }) => {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
@@ -42,6 +46,8 @@ const ProductCard: FC<ProductCardProps> = ({
   return (
     <div className="product-card">
       <div className="product-image">
+      {isNew && <div className="new-label">New</div>}
+
         <button
           className={`wishlist-btn ${isWishlisted ? 'active' : ''}`}
           onClick={handleWishlistClick}
