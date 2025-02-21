@@ -152,6 +152,8 @@ const Home = () => {
                     originalPrice={product.originalPrice}
                     discount={product.discount}
                     rating={product.rating}
+                    isNew={product.isNew}  
+
                   />
                 ))}
               </div>

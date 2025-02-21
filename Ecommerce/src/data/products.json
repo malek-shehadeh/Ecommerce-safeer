@@ -182,6 +182,7 @@
       {
         "id": 12,
         "title": "SSD Mounting Kit Ultra",
+        "isNew": true,
         "category": "Hard Drive Accessories",
         "originalPrice": 24.99,
         "discount": 15,
@@ -230,6 +231,7 @@
       {
         "id": 15,
         "title": "Printer Network Card Elite",
+        "isNew": true,
         "category": "Printer Accessories",
         "originalPrice": 59.99,
         "discount": 15,
@@ -246,6 +248,7 @@
       {
         "id": 16,
         "title": "Color Ink Cartridge Pro Set",
+        "isNew": true,
         "category": "Printer Ink & Toner",
         "originalPrice": 99.99,
         "discount": 50,
@@ -310,6 +313,7 @@
       {
         "id": 20,
         "title": "Dual Monitor Mount Pro",
+        "isNew": true,
         "category": "Monitor Accessories",
         "originalPrice": 129.99,
         "discount": 35,
@@ -374,6 +378,7 @@
       {
         "id": 24,
         "title": "Professional Audio Interface",
+        "isNew": true,
         "category": "Audio & Video",
         "originalPrice": 199.99,
         "discount": 35,
@@ -979,6 +984,9 @@
       "Printer Accessories",
       "Printer Ink & Toner",
       "Scanner Accessories",
+      "USB Hubs",
+      "USB Hubs",
+      "USB Hubs",
       "USB Hubs"
     ],
     "discounts": [5, 15, 25, 35, 50, 75,80,85,90],
