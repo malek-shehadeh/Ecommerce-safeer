@@ -1,5 +1,8 @@
-// src/components/filters/CategoryFilter.tsx
-import React from 'react'
+
+
+
+import React, { useState } from 'react'
+
 interface Props {
   categories: string[];
   selectedCategories: string[];
@@ -7,13 +10,30 @@ interface Props {
 }
 
 const CategoryFilter: React.FC<Props> = ({ categories, selectedCategories, onCategoryChange }) => {
+  const [isExpanded, setIsExpanded] = useState(true);
+
   return (
     <div className="filter-section">
       <div className="filter-header">
         <h3>Categories</h3>
+        <button 
+          className="expand-btn"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <img 
+            src={isExpanded ? "/Vectorup.svg" : "/Vectordown.svg"} 
+            alt="expand" 
+          />
+        </button>
       </div>
-      
-      <div className="filter-content">
+     
+      <div 
+        className="filter-content"
+        style={{
+          display: isExpanded ? 'flex' : 'none',
+          transition: 'all 0.3s ease'
+        }}
+      >
         {categories.map((category) => (
           <label key={category} className="filter-item">
             <input
@@ -28,4 +48,5 @@ const CategoryFilter: React.FC<Props> = ({ categories, selectedCategories, onCat
     </div>
   )
 }
+
 export default CategoryFilter
