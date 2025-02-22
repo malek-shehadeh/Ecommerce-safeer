@@ -1,6 +1,5 @@
-// src/components/filters/PriceFilter.tsx
 
-import React from 'react'
+import React, { useState } from 'react'
 
 interface Props {
   priceRanges: string[];
@@ -9,16 +8,30 @@ interface Props {
 }
 
 const PriceFilter: React.FC<Props> = ({ priceRanges, selectedRanges, onPriceChange }) => {
+  const [isExpanded, setIsExpanded] = useState(true);
+
   return (
     <div className="filter-section">
       <div className="filter-header">
         <h3>Price</h3>
-        <button className="expand-btn">
-          <img src="/arrow-down.svg" alt="expand" />
+        <button 
+          className="expand-btn"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <img 
+            src={isExpanded ? "/Vectorup.svg" : "/Vectordown.svg"} 
+            alt="expand" 
+          />
         </button>
       </div>
       
-      <div className="filter-content">
+      <div 
+        className="filter-content"
+        style={{
+          display: isExpanded ? 'flex' : 'none',
+          transition: 'all 0.3s ease'
+        }}
+      >
         {priceRanges.map((range) => (
           <label key={range} className="filter-item">
             <input
@@ -39,5 +52,5 @@ const PriceFilter: React.FC<Props> = ({ priceRanges, selectedRanges, onPriceChan
     </div>
   )
 }
-  
-  export default PriceFilter
+
+export default PriceFilter

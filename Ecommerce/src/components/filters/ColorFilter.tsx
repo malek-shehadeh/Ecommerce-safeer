@@ -1,4 +1,6 @@
-// src/components/filters/ColorFilter.tsx
+
+import React, { useState } from 'react'
+
 interface Props {
   colors: string[];
   selectedColors: string[];
@@ -6,16 +8,30 @@ interface Props {
 }
 
 const ColorFilter: React.FC<Props> = ({ colors, selectedColors, onColorChange }) => {
+  const [isExpanded, setIsExpanded] = useState(true);
+
   return (
     <div className="filter-section">
       <div className="filter-header">
         <h3>Color</h3>
-        <button className="expand-btn">
-          <img src="/arrow-down.svg" alt="expand" />
+        <button 
+          className="expand-btn"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <img 
+            src={isExpanded ? "/Vectorup.svg" : "/Vectordown.svg"} 
+            alt="expand" 
+          />
         </button>
       </div>
       
-      <div className="filter-content">
+      <div 
+        className="filter-content"
+        style={{
+          display: isExpanded ? 'flex' : 'none',
+          transition: 'all 0.3s ease'
+        }}
+      >
         <div className="color-options">
           {colors.map((color) => (
             <button
