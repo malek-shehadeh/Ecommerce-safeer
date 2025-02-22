@@ -1,17 +1,17 @@
 
-// src/components/FilterBar.scss
 .filter-bar {
-    width: 59.8125rem; // 957px
+    width: 59.8125rem; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1rem;
-    background-color: #f5f5f5;
+    background-color: rgba(234, 234, 234, 1);
     border-radius: 0.25rem;
     margin-left: 651px;
     position: relative;
     z-index: 5;
-    
+    margin-top: 58px;
+
     @media (max-width: 1399px) {
       width: 100%;
       max-width: 957px;
@@ -38,17 +38,20 @@
     .right-section {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-  
-      .sort-section,
-      .display-section {
+      gap: 2rem;
+      margin-left: 13px;
+      width: 100%;
+      justify-content: flex-end;
+
+      .sort-section {
         display: flex;
         align-items: center;
         gap: 0.5rem;
   
         span {
-          font-size: 0.875rem;
-          color: #333;
+            font-weight: 400;
+            font-size: 1rem;
+            color: rgb(0, 0, 0);
         }
   
         select {
@@ -56,14 +59,50 @@
           border: 1px solid #ddd;
           border-radius: 0.25rem;
           background-color: white;
-          font-size: 0.875rem;
-          color: #333;
+          font-size: 0.75rem;
+          color: rgba(118, 118, 118, 1);
           cursor: pointer;
           appearance: none;
-          background-image: url('/arrow-down.svg');
+          background-image: url('/arrowdownlight.svg');
           background-repeat: no-repeat;
           background-position: right 0.5rem center;
           background-size: 0.75rem;
+          width: 10rem;
+          height: 2.25rem;
+  
+          &:focus {
+            outline: none;
+            border-color: #8b185e;
+          }
+        }
+      }
+
+      .display-section {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+  
+        span {
+            font-weight: 400;
+            font-size: 1rem;
+            color: rgb(0, 0, 0);
+        }
+  
+        select {
+          padding: 0.375rem 1.5rem 0.375rem 0.75rem;
+          border: 1px solid #ddd;
+          border-radius: 0.25rem;
+          background-color: white;
+          font-size: 0.75rem;
+          color: rgba(118, 118, 118, 1);
+          cursor: pointer;
+          appearance: none;
+          background-image: url('/arrowdownlight.svg');
+          background-repeat: no-repeat;
+          background-position: right 0.5rem center;
+          background-size: 0.75rem;
+          width: 4.0625rem;
+          height: 2.25rem;
   
           &:focus {
             outline: none;
@@ -74,7 +113,8 @@
   
       .view-options {
         display: flex;
-        gap: 0.5rem;
+        gap: 1rem;
+        margin-left: auto;
   
         button {
           width: 2rem;
@@ -82,25 +122,13 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          border: 1px solid #ddd;
+          border: none;
           border-radius: 0.25rem;
-          background-color: white;
+          background-color: inherit;
           cursor: pointer;
   
-          &.active {
-            background-color: #8b185e;
-            border-color: #8b185e;
-  
-            img {
-              filter: brightness(0) invert(1);
-            }
-          }
-  
-          img {
-            width: 1rem;
-            height: 1rem;
-          }
+       
         }
       }
     }
-  }
+}
