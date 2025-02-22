@@ -1,20 +1,15 @@
+
 // src/components/products/ProductCard.tsx
 import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToWishlist, removeFromWishlist } from '../../redux/slices/wishlistSlice'
 import { RootState } from '../../redux/store'
+import { Product } from '../../types/product'
 import ProductIcons from './ProductIcons'
 import './ProductCard.scss'
 
-interface ProductCardProps {
-  id: number;
-  title: string;
-  image: string;
-  originalPrice: number;
-  discount: number;
-  rating: number;
-  isNew?: boolean; 
-
+interface ProductCardProps extends Product {
+  isNew?: boolean;
 }
 
 const ProductCard: FC<ProductCardProps> = ({
@@ -24,30 +19,28 @@ const ProductCard: FC<ProductCardProps> = ({
   originalPrice,
   discount,
   rating,
-  isNew, 
-
+  isNew
 }) => {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
-  const isWishlisted = wishlistItems.some(item => item.id === id);
+  const isWishlisted = wishlistItems.some((item: Product) => item.id === id);
 
   const discountedPrice = originalPrice - (originalPrice * discount / 100);
 
   const handleWishlistClick = () => {
+    const productData: Product = { id, title, image, originalPrice, discount, rating };
+    
     if (isWishlisted) {
       dispatch(removeFromWishlist(id));
     } else {
-      dispatch(addToWishlist({ id, title, image, originalPrice, discount, rating }));
+      dispatch(addToWishlist(productData));
     }
   };
-
-  const product = { id, title, image, originalPrice, discount, rating };
 
   return (
     <div className="product-card">
       <div className="product-image">
-      {isNew && <div className="new-label">New</div>}
-
+        {isNew && <div className="new-label">New</div>}
         <button
           className={`wishlist-btn ${isWishlisted ? 'active' : ''}`}
           onClick={handleWishlistClick}
@@ -69,7 +62,7 @@ const ProductCard: FC<ProductCardProps> = ({
         </div>
 
         <div className="product-actions">
-          <ProductIcons product={product} />
+          <ProductIcons product={{ id, title, image, originalPrice, discount, rating }} />
           <div className="product-rating">
             <img src="/star (2).svg" alt="rating" />
             <span>{rating}</span>

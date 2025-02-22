@@ -6,11 +6,11 @@ interface FilterBarProps {
   onSortChange: (type: string) => void;
   onDisplayChange: (count: number) => void;
   totalItems: number;
-  currentSort: string;  // إضافة
-  currentDisplay: number;  // إضافة
+  currentSort: string;  
+  currentDisplay: number;  
 }
 
-const FilterBar: React.FC<FilterBarProps> = ({ onSortChange, onDisplayChange, totalItems }) => {
+const FilterBar: React.FC<FilterBarProps> = ({ onSortChange, onDisplayChange }) => {
   const [sortBy, setSortBy] = useState('recommended');
   const [displayCount, setDisplayCount] = useState(50);
 
@@ -26,9 +26,7 @@ const FilterBar: React.FC<FilterBarProps> = ({ onSortChange, onDisplayChange, to
 
   return (
     <div className="filter-bar">
-      <div className="left-section">
-        <span className="total-items">{totalItems} Items</span>
-      </div>
+     
 
       <div className="right-section">
         <div className="sort-section">
@@ -61,10 +59,10 @@ const FilterBar: React.FC<FilterBarProps> = ({ onSortChange, onDisplayChange, to
 
         <div className="view-options">
           <button className="grid-view active">
-            <img src="/grid-view.svg" alt="Grid view" />
+            <img src="/gridview.svg" alt="Grid view" />
           </button>
           <button className="list-view">
-            <img src="/list-view.svg" alt="List view" />
+            <img src="/listview.svg" alt="List view" />
           </button>
         </div>
       </div>

@@ -108,22 +108,32 @@ const Home = () => {
     <div className="home-page">
       <section className="hero">
         <div className="container">
-          <div className="hero-content">
-            <h1>
-              Discover <span>A Range Of Products</span>
-            </h1>
-            <h2>For Gaming Professionals</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-            <button className="discover-btn">Discover Now</button>
-          </div>
+        <div className="hero-content">
+  <h1>
+    <div className="first-line">
+      <span className="title">Discover</span>
+      <span className="subtitle">A Range Of Products</span>
+    </div>
+    <div className="second-line">
+      <span className="prefix">For</span>
+      <span className="main-text">Gaming Professionals</span>
+    </div>
+  </h1>
+  <p>
+    Lorem Ipsum Is Simply Dummy Text Of The Printing 
+    And Typesetting Industry. Lorem Ipsum Has Been 
+    The Industry's Standard Dummy Text Ever Since The 1500s
+  </p>
+  <button className="discover-btn">Discover Now</button>
+</div>
         </div>
       </section>
 
       <section className="products-section">
         <div className="container">
-          <div className="products-header">
+          {/* <div className="products-header">
             <h2>Computers</h2>
-          </div>
+          </div> */}
           
           <FilterBar
             totalItems={filteredProducts.length}
