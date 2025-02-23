@@ -1,4 +1,4 @@
-// src/components/Pagination.tsx
+
 import './Pagination.scss';
 
 interface PaginationProps {
@@ -9,37 +9,39 @@ interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({
   currentPage,
-  totalPages,
   onPageChange,
 }) => {
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  // Show only pages 1-5 and 10
+  const pageNumbers = [1, 2, 3, 4, 5, 10];
 
   return (
     <div className="pagination">
-      <button 
+      <button
         className="page-control"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <img src="/arrow-left.svg" alt="Previous" />
+        <img src="/paginationleft.svg" alt="Previous" />
       </button>
 
-      {pageNumbers.map((number) => (
-        <button
-          key={number}
-          className={`page-number ${currentPage === number ? 'active' : ''}`}
-          onClick={() => onPageChange(number)}
-        >
-          {number}
-        </button>
-      ))}
+      <div className="page-numbers-container">
+        {pageNumbers.map((number) => (
+          <button
+            key={number}
+            className={`page-number ${currentPage === number ? 'active' : ''}`}
+            onClick={() => onPageChange(number)}
+          >
+            {number}
+          </button>
+        ))}
+      </div>
 
-      <button 
+      <button
         className="page-control"
         onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
+        disabled={currentPage === 10}
       >
-        <img src="/arrow-right.svg" alt="Next" />
+        <img src="/paginationright.svg" alt="Next" />
       </button>
     </div>
   );

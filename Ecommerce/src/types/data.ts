@@ -7,7 +7,7 @@ export interface Product {
     discount: number;
     image: string;
     rating: number;
-    color: string;
+    colors: string[];
     icons: {
       wishlist: boolean;
       compare: boolean;

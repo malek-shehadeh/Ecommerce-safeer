@@ -6,6 +6,7 @@ export interface Product {
     originalPrice: number;
     discount: number;
     rating: number;
+    colors: string[]; 
   }
   
   export interface CartItem extends Product {

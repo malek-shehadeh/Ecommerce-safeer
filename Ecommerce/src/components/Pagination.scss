@@ -1,60 +1,94 @@
-// src/components/Pagination.scss
 
-.pagination {
-    width: 100%; // Changed from fixed width to 100%
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+
+.pagination-container {
+    width: 100%;
     margin: 2rem auto;
-    padding: 1rem 0;
+    // padding: 0 1rem;
+    position: relative;
+    z-index: 5;
   
-    .page-number {
-      width: 2rem;
-      height: 2rem;
+    .pagination {
+      width: 100%;
+      max-width: 957px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center;
-      border: none;
-      background: none;
-      color: #666;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 0.25rem;
+      height: 55px;
+      background-color: rgba(234, 234, 234, 1);
+      position: relative;
+    //   border: 1px solid rgba(223, 223, 223, 1);
+      border-radius: 4px;
   
-      &:hover {
-        background-color: #f5f5f5;
+      .page-numbers-container {
+        display: flex;
+        // gap: 0.5rem;
+        position: absolute;
+        right: 43px; 
+        align-items: center;
+        height: 100%;
+        margin-right: 44px;
+        font-size: 15px;
+        font-weight: 700;
+        font-family: Almarai, sans-serif;
+        .page-number:not(:first-child):not(:last-child) {
+            border-right: 1px solid rgba(223, 223, 223, 1);
+            border-left: 1px solid rgba(223, 223, 223, 1);
+          }
+
+
       }
   
-      &.active {
-        background-color: #8b185e;
-        color: white;
-      }
-    }
+      .page-number {
+        width: 43px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: none;
+        color: rgba(0, 0, 0, 1);
+        font-size: 1rem;
+        cursor: pointer;
   
-    .page-control {
-      width: 2rem;
-      height: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      background: none;
-      cursor: pointer;
-      border-radius: 0.25rem;
+        &:hover {
+          background-color: rgba(223, 223, 223, 0.5);
+        }
   
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-  
-      &:not(:disabled):hover {
-        background-color: #f5f5f5;
+        &.active {
+          background-color: rgba(223, 223, 223, 1);
+          color:rgba(117, 33, 87, 1);
+        }
       }
   
-      img {
-        width: 1rem;
-        height: 1rem;
+      .page-control {
+        width: 43px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background: none;
+        cursor: pointer;
+        position: absolute;
+  
+        &:first-child {
+          left: 10px;
+        }
+  
+        &:last-child {
+            right: 10px;
+        }
+  
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+  
+        &:not(:disabled):hover {
+          background-color: rgba(223, 223, 223, 0.5);
+        }
+  
+     
       }
     }
   }

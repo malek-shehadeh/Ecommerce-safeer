@@ -54,3 +54,4 @@ const PriceFilter: React.FC<Props> = ({ priceRanges, selectedRanges, onPriceChan
 }
 
 export default PriceFilter
+

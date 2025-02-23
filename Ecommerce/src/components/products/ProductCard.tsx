@@ -19,7 +19,8 @@ const ProductCard: FC<ProductCardProps> = ({
   originalPrice,
   discount,
   rating,
-  isNew
+  isNew,
+  colors
 }) => {
   const dispatch = useDispatch();
   const wishlistItems = useSelector((state: RootState) => state.wishlist.items);
@@ -28,7 +29,7 @@ const ProductCard: FC<ProductCardProps> = ({
   const discountedPrice = originalPrice - (originalPrice * discount / 100);
 
   const handleWishlistClick = () => {
-    const productData: Product = { id, title, image, originalPrice, discount, rating };
+    const productData: Product = { id, title, image, originalPrice, discount, rating, colors };
     
     if (isWishlisted) {
       dispatch(removeFromWishlist(id));
@@ -52,7 +53,15 @@ const ProductCard: FC<ProductCardProps> = ({
 
       <div className="product-info">
         <h3 className="product-title">{title}</h3>
-       
+        <div className="colors-container">
+          {colors.map((color, index) => (
+            <div 
+              key={index}
+              className="color-indicator" 
+              style={{ backgroundColor: color }}
+            />
+          ))}
+        </div>
         <div className="product-price">
           <span className="current-price">{discountedPrice.toFixed(2)} JD</span>
           <div className="original-price-container">
@@ -62,7 +71,7 @@ const ProductCard: FC<ProductCardProps> = ({
         </div>
 
         <div className="product-actions">
-          <ProductIcons product={{ id, title, image, originalPrice, discount, rating }} />
+          <ProductIcons product={{ id, title, image, originalPrice, discount, rating,colors }} />
           <div className="product-rating">
             <img src="/star (2).svg" alt="rating" />
             <span>{rating}</span>
