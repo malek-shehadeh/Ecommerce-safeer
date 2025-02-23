@@ -19,7 +19,7 @@ const Home = () => {
     ratings: []
   });
   const [sortType, setSortType] = useState('recommended');
-  const [itemsPerPage, setItemsPerPage] = useState(50);
+  const [itemsPerPage, setItemsPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
   // Reset page when filters change
@@ -59,9 +59,9 @@ const Home = () => {
       }
 
       if (appliedFilters.colors.length > 0 && 
-          !appliedFilters.colors.includes(product.color)) {
-        return false;
-      }
+        !product.colors.some(color => appliedFilters.colors.includes(color))) {
+      return false;
+    }
 
       if (appliedFilters.ratings.length > 0 && 
           !appliedFilters.ratings.some(rating => Math.floor(product.rating) === rating)) {
@@ -131,9 +131,7 @@ const Home = () => {
 
       <section className="products-section">
         <div className="container">
-          {/* <div className="products-header">
-            <h2>Computers</h2>
-          </div> */}
+       
           
           <FilterBar
             totalItems={filteredProducts.length}
@@ -163,6 +161,7 @@ const Home = () => {
                     discount={product.discount}
                     rating={product.rating}
                     isNew={product.isNew}  
+                    colors={product.colors}  
 
                   />
                 ))}
@@ -186,3 +185,4 @@ const Home = () => {
 }
 
 export default Home
+

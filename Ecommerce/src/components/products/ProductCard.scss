@@ -81,6 +81,17 @@
       justify-content: space-between; 
       border-top: 1px solid rgba(234, 234, 234, 1);  
   
+
+      .colors-container {
+        display: flex;
+        gap: 4px;
+        
+      .color-indicator {
+        width: 20px;
+        height: 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      }}
       .product-title {
         font-family: Almarai, sans-serif;
         font-weight: 700;
@@ -105,6 +116,8 @@
           line-height: 2.5rem;
           color: #752157;
           display: block;
+          height: 22.57px;
+
         }
   
         .original-price-container {
@@ -114,7 +127,7 @@
   
           .original-price {
             font-family: Almarai, sans-serif;
-            font-weight: 400;
+            font-weight: 700;
             font-size: 0.875rem;
             line-height: 2.5rem;
             color: rgba(118, 118, 118, 1);
