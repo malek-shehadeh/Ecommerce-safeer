@@ -1,4 +1,3 @@
-// src/components/Layout.tsx
 import Navbar from './layout/Navbar'
 import Footer from './layout/Footer'
 import '../styles/layout.scss'

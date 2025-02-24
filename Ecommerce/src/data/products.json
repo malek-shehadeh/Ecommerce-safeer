@@ -1,7 +1,4 @@
-
-
-
-  {
+ {
     "products": [
       {
         "id": 1,
@@ -943,7 +940,7 @@
         "originalPrice": 24.99,
         "discount": 25,
         "image": "/Layer 2 2.svg",
-        "rating": 3.5,
+        "rating": 3.9,
         "colors": ["#004FC4", "#E5B800", "#E57A00","#00B7C4"],
         "icons": {
           "wishlist": true,
