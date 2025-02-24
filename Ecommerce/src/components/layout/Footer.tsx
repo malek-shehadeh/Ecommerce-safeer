@@ -63,15 +63,15 @@ const Footer = () => {
                 <div className="app-buttons">
   <a href="#" className="app-button">
     <img src="/Apple logo.svg" alt="App Store" />
-    <span>Download on the App Store</span>
+    <span data-small-text="Download on the" data-large-text="App Store"></span>
   </a>
   <a href="#" className="app-button">
     <img src="/Google Play logo.svg" alt="Google Play" />
-    <span>GET IT ON Google Play</span>
+    <span data-small-text="GET IT ON" data-large-text="Google Play"></span>
   </a>
   <a href="#" className="app-button">
     <img src="/Galaxy Store icon.svg" alt="Galaxy Store" />
-    <span>Available on Galaxy Store</span>
+    <span data-small-text="Available on" data-large-text="Galaxy Store"></span>
   </a>
 </div>
               </div>

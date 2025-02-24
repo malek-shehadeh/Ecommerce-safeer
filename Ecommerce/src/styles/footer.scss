@@ -136,6 +136,7 @@ line-height: 20px;
           display: flex;
           flex-direction: column;
           gap: 0.5rem;
+
           
           .app-button {
             display: flex;
@@ -143,15 +144,30 @@ line-height: 20px;
             gap: 1rem;
             text-decoration: none;
             padding: 0.5rem 1rem;
-            // background-color: white;
             border: 1px solid rgba(228, 228, 235, 1);
             border-radius: 8px;
-            // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            width: 174px; 
+            height: 40px; 
             
             span {
+              display: flex;
+              flex-direction: column;
               color: #333;
               font-size: 0.875rem;
               font-family: Almarai, sans-serif;
+
+ /* Adding styles for the two-line text */
+ &::before {
+  content: attr(data-small-text);
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+
+&::after {
+  content: attr(data-large-text);
+  font-weight: bold;
+}
+
             }
         
             &:hover {
