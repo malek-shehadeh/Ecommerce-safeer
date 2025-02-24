@@ -1,4 +1,3 @@
-// src/pages/Cart.tsx
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { removeFromCart, updateQuantity } from '../redux/slices/cartSlice';

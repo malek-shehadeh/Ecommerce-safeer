@@ -1,4 +1,3 @@
-// src/pages/Wishlist.tsx
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { removeFromWishlist } from '../redux/slices/wishlistSlice';
@@ -34,7 +33,7 @@ const Wishlist = () => {
                     className="remove-btn"
                     onClick={() => dispatch(removeFromWishlist(item.id))}
                   >
-                    <img src="/close-icon.svg" alt="remove" />
+                    <img src="/delete.svg" alt="remove" />
                   </button>
 
                   <img src={item.image} alt={item.title} className="item-image" />

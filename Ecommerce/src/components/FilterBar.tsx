@@ -1,4 +1,3 @@
-// src/components/FilterBar.tsx
 import { useState } from 'react';
 import './FilterBar.scss';
 

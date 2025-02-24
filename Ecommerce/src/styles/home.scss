@@ -1,23 +1,70 @@
 
-
-//home.tsx
-
 .home-page {
   background-color: #FFFFFF;
 }
 
 // Hero Section 
 .hero {
+  position: relative;
   background-color: #f5f5f5;
   padding: 3rem 0;
-  background-image: url('https://s3-alpha-sig.figma.com/img/d8e7/a6ba/de47b36f3c78fc2985b33d70624ab5ab?Expires=1740960000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=cD4uAJP8JNVEacxwt6dEiVfU0WZWXDRiHBx6PnA4F1IAmAeOe4PEsringMji3dZ7iMJdcCuVfmS9qPKhJic9NDtREuDmR94GxclYyHsivXiYdeEfYjZU3ZgfTMsXvm-aCDnFJYTNlVDTQ7wnVC1hZq~gcRVJfAuoldY3jxjm8XoB-b67aHzcUb4Eox82TtcDDWT1-9DykrU5lLNkhjmCxsU1MfhlRxLpaWPj2H0BnJ5ZqVgD5lE3DO5-CgZVSiLve94uLR73DQEQAhtGlua3bHzSIhgP5Wh23MUh8bmOsDNI0Z3TWVYmYZdDT4W-8~BPOlrRPMf6KKE3EGP6~-Aipw__');
+  height: 22.313125rem;
   background-size: cover;
   background-position: center;
-  height: 22.313125rem;
+  transition: background-image 0.3s ease-in-out;
+
+  .slider-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+    padding: 8px;
+    // حذف الخلفية و box-shadow
+    background: transparent;
+    
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    
+    &:hover {
+      opacity: 0.8; // فقط تغيير الشفافية عند hover
+    }
+  
+    &-prev {
+      left: 20px;
+    }
+  
+    &-next {
+      right: 20px;
+    }
+  
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+      padding: 6px;
+      
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 
   .container {
     height: 10.8125rem;
     margin-top: 1.25rem;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-content {
@@ -250,10 +297,8 @@
   justify-content: center;
   margin-top: 49px;
   
-  // Mobile first approach
   grid-template-columns: repeat(1, minmax(auto, 13.824375rem));
   
-  // Tablets
   @media (min-width: 600px) and (max-width: 899px) {
     grid-template-columns: repeat(2, minmax(auto, 13.824375rem));
     .ad-banner {
@@ -261,7 +306,6 @@
     }
   }
   
-  // Small laptops
   @media (min-width: 900px) and (max-width: 1199px) {
     grid-template-columns: repeat(3, minmax(auto, 13.824375rem));
     .ad-banner {
@@ -269,19 +313,17 @@
     }
   }
   
-  // Desktops and larger
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, minmax(auto, 13.824375rem));
     .ad-banner {
       grid-column: 1 / 5; 
     }
-  
   }
+
   .ad-banner {
     grid-column: 1 / -1;
     width: 100%;
     height: 25.320625rem;
-    background-image: url('https://s3-alpha-sig.figma.com/img/ac93/99ec/e6fd264dd05bb47c82e88b5ff8146ae7?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=aiLGDp4oDSXfoqIr~zeRDyFQSTiw7uH179HVzs~R-e5mTPH~b1fPA-v6WIiSK7VRVZXR7WFO18snrdvsM793rTo~VibUMkmgSfKDAGz5NfMkH8p3jQ9vYt~L7dgzbIzVIsYbfRZn7RF0mULVAJGtyW9iC9c7YeXXw5VdFNY0CCyXhfG28mBE2~qhQy3-4Psmj1vS80Cj~-3PIvbuyHmV3TT8UimIJ4KpdXQcpzW-nHoSKQd4c~SouqYRWvZLz9BP0D8zCDy8cHEAoQ4pT6wPk0JyUPf2yK6xAkukHRg~htwu1t6rXK8ivO0BR-FbIblJZBxWlTSHlnPnHMFajLXUSA__');
     background-image: url('/Mask.png');
     background-size: cover;
     background-position: center;
@@ -314,7 +356,6 @@
         margin-top: 1rem;
         font-family: Almarai, sans-serif;
         line-height: 20px;
-
       }
     }
 

@@ -1,4 +1,3 @@
-// src/types/filters.ts
 export type FilterTypes = 'categories' | 'discounts' | 'priceRanges' | 'colors' | 'ratings';
 
 export interface FilterState {

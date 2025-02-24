@@ -1,4 +1,3 @@
-
 import { useState, useMemo, useEffect } from 'react'
 import Filters from '../components/Filters'
 import FilterBar from '../components/FilterBar'
@@ -9,8 +8,28 @@ import '../styles/home.scss'
 import filterData from '../data/products.json'
 import AdBanner from '../components/products/AdBanner'
 import React from 'react'
+
+const heroSlides = [
+  {
+    image: '/slider.png',
+    title: 'Discover',
+    subtitle: 'A Range Of Products',
+    prefix: 'For',
+    mainText: 'Gaming Professionals'
+  },
+  {
+    image: '/Mask.png',
+    title: 'Explore',
+    subtitle: 'Gaming Gear',
+    prefix: 'For',
+    mainText: 'Pro Gamers'
+  }
+];
+
 const Home = () => {
   // States
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const [appliedFilters, setAppliedFilters] = useState<FilterState>({
     categories: [],
     discounts: [],
@@ -33,6 +52,15 @@ const Home = () => {
     setCurrentPage(1);
   }, [appliedFilters, sortType, itemsPerPage, customPriceRange]);
 
+  // Slider navigation functions
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   const getPriceRange = (range: string): [number, number] => {
     switch (range) {
       case 'Under $25': return [0, 25];
@@ -46,9 +74,7 @@ const Home = () => {
 
   // Filter and sort products
   const filteredProducts = useMemo(() => {
-    // Filter products
     const filtered = filterData.products.filter(product => {
-      // Existing filters
       if (appliedFilters.categories.length > 0 && 
           !appliedFilters.categories.includes(product.category)) {
         return false;
@@ -60,7 +86,7 @@ const Home = () => {
       }
 
       if (appliedFilters.colors.length > 0 && 
-        !product.colors.some(color => appliedFilters.colors.includes(color))) {
+          !product.colors.some(color => appliedFilters.colors.includes(color))) {
         return false;
       }
 
@@ -69,7 +95,6 @@ const Home = () => {
         return false;
       }
 
-      // Price ranges from checkboxes
       if (appliedFilters.priceRanges.length > 0) {
         const price = product.originalPrice * (1 - product.discount / 100);
         const isInAnyRange = appliedFilters.priceRanges.some(range => {
@@ -79,7 +104,6 @@ const Home = () => {
         if (!isInAnyRange) return false;
       }
 
-      // Custom price range
       const discountedPrice = product.originalPrice * (1 - product.discount / 100);
       if (customPriceRange.min !== null && discountedPrice < customPriceRange.min) return false;
       if (customPriceRange.max !== null && discountedPrice > customPriceRange.max) return false;
@@ -87,7 +111,6 @@ const Home = () => {
       return true;
     });
 
-    // Sort products
     return filtered.sort((a, b) => {
       const getPrice = (product: Product) => product.originalPrice * (1 - product.discount / 100);
       
@@ -110,17 +133,39 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <section className="hero">
+      <section 
+        className="hero"
+        style={{
+          backgroundImage: `url(${heroSlides[currentSlide].image})`,
+        }}
+      >
+        {/* Navigation Buttons */}
+        <button 
+          onClick={prevSlide}
+          className="slider-nav-btn slider-nav-btn-prev"
+          aria-label="Previous slide"
+        >
+          <img src="/llll.svg" alt="Previous" width={24} height={24} />
+        </button>
+        
+        <button 
+          onClick={nextSlide}
+          className="slider-nav-btn slider-nav-btn-next"
+          aria-label="Next slide"
+        >
+          <img src="/arrowheroright.svg" alt="Next" width={24} height={24} />
+        </button>
+
         <div className="container">
           <div className="hero-content">
             <h1>
               <div className="first-line">
-                <span className="title">Discover</span>
-                <span className="subtitle">A Range Of Products</span>
+                <span className="title">{heroSlides[currentSlide].title}</span>
+                <span className="subtitle">{heroSlides[currentSlide].subtitle}</span>
               </div>
               <div className="second-line">
-                <span className="prefix">For</span>
-                <span className="main-text">Gaming Professionals</span>
+                <span className="prefix">{heroSlides[currentSlide].prefix}</span>
+                <span className="main-text">{heroSlides[currentSlide].mainText}</span>
               </div>
             </h1>
             <p>
@@ -152,14 +197,15 @@ const Home = () => {
                 currentSort={sortType}
                 currentDisplay={itemsPerPage}
               />
-     <div className="products-grid">
-  {paginatedProducts.map((product, index) => (
-    <React.Fragment key={product.id}>
-      <ProductCard {...product} />
-      {index === 3 && <AdBanner />} {/* إضافة البانر بعد رابع منتج */}
-    </React.Fragment>
-  ))}
-</div>
+              
+              <div className="products-grid">
+                {paginatedProducts.map((product, index) => (
+                  <React.Fragment key={product.id}>
+                    <ProductCard {...product} />
+                    {index === 3 && <AdBanner />} 
+                  </React.Fragment>
+                ))}
+              </div>
               
               {totalPages > 1 && (
                 <div className="pagination-container">
