@@ -7,7 +7,8 @@ import ProductCard from '../components/products/ProductCard'
 import { FilterState, Product } from '../types/filters'
 import '../styles/home.scss'
 import filterData from '../data/products.json'
-
+import AdBanner from '../components/products/AdBanner'
+import React from 'react'
 const Home = () => {
   // States
   const [appliedFilters, setAppliedFilters] = useState<FilterState>({
@@ -151,14 +152,14 @@ const Home = () => {
                 currentSort={sortType}
                 currentDisplay={itemsPerPage}
               />
-              <div className="products-grid">
-                {paginatedProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    {...product}
-                  />
-                ))}
-              </div>
+     <div className="products-grid">
+  {paginatedProducts.map((product, index) => (
+    <React.Fragment key={product.id}>
+      <ProductCard {...product} />
+      {index === 3 && <AdBanner />} {/* إضافة البانر بعد رابع منتج */}
+    </React.Fragment>
+  ))}
+</div>
               
               {totalPages > 1 && (
                 <div className="pagination-container">

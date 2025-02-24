@@ -256,15 +256,114 @@
   // Tablets
   @media (min-width: 600px) and (max-width: 899px) {
     grid-template-columns: repeat(2, minmax(auto, 13.824375rem));
+    .ad-banner {
+      grid-column: 1 / 3; 
+    }
   }
   
   // Small laptops
   @media (min-width: 900px) and (max-width: 1199px) {
     grid-template-columns: repeat(3, minmax(auto, 13.824375rem));
+    .ad-banner {
+      grid-column: 1 / 4; 
+    }
   }
   
   // Desktops and larger
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, minmax(auto, 13.824375rem));
+    .ad-banner {
+      grid-column: 1 / 5; 
+    }
+  
+  }
+  .ad-banner {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 25.320625rem;
+    background-image: url('https://s3-alpha-sig.figma.com/img/ac93/99ec/e6fd264dd05bb47c82e88b5ff8146ae7?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=aiLGDp4oDSXfoqIr~zeRDyFQSTiw7uH179HVzs~R-e5mTPH~b1fPA-v6WIiSK7VRVZXR7WFO18snrdvsM793rTo~VibUMkmgSfKDAGz5NfMkH8p3jQ9vYt~L7dgzbIzVIsYbfRZn7RF0mULVAJGtyW9iC9c7YeXXw5VdFNY0CCyXhfG28mBE2~qhQy3-4Psmj1vS80Cj~-3PIvbuyHmV3TT8UimIJ4KpdXQcpzW-nHoSKQd4c~SouqYRWvZLz9BP0D8zCDy8cHEAoQ4pT6wPk0JyUPf2yK6xAkukHRg~htwu1t6rXK8ivO0BR-FbIblJZBxWlTSHlnPnHMFajLXUSA__');
+    background-image: url('/Mask.png');
+    background-size: cover;
+    background-position: center;
+    background-position: left top;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin: 1.5rem 0;
+
+    .ad-content {
+      position: absolute;
+      left: 6.3125rem;
+      top: 7.875rem;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 2;
+
+      h2 {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin: 0;
+        font-family: Almarai, sans-serif;
+        line-height: 20px;
+      }
+      
+      span {
+        font-size: 2.25rem;
+        font-weight: 700;
+        display: block;
+        margin-top: 1rem;
+        font-family: Almarai, sans-serif;
+        line-height: 20px;
+
+      }
+    }
+
+    @media (max-width: 1199px) {
+      height: 20rem;
+      
+      .ad-content {
+        left: 2rem;
+        
+        h2 {
+          font-size: 2rem;
+        }
+        
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    @media (max-width: 899px) {
+      height: 18rem;
+      
+      .ad-content {
+        left: 1.5rem;
+        
+        h2 {
+          font-size: 1.75rem;
+        }
+        
+        span {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      height: 15rem;
+      
+      .ad-content {
+        left: 1rem;
+        
+        h2 {
+          font-size: 1.5rem;
+        }
+        
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
   }
 }
