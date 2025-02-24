@@ -65,7 +65,7 @@ const Cart = () => {
                       className="remove-btn"
                       onClick={() => dispatch(removeFromCart(item.id))}
                     >
-                      <img src="/trash-icon.svg" alt="remove" />
+                      <img src="/delete.svg" alt="remove" />
                     </button>
                   </div>
                 );
