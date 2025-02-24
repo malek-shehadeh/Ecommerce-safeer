@@ -1,19 +1,4 @@
-// // src/App.tsx
-// import Layout from './components/Layout'
-// import Home from './pages/Home'
-// import './styles/main.scss'
 
-// function App() {
-//   return (
-//     <Layout>
-//       <Home />
-//     </Layout>
-//   )
-// }
-
-// export default App
-
-// src/App.tsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
