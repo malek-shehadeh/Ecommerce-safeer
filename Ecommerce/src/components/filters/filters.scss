@@ -10,7 +10,7 @@
 }
 .category-header {
   margin-bottom: 0.566rem;
-  margin-top: -111px;
+  margin-top: 1.25rem;
 
   h3 {
     font-size: 1rem;
@@ -39,8 +39,11 @@
     font-family: Almarai, sans-serif;
   }
 
+  // @media (max-width: 767px) {
+  //   padding: 0 1rem;
+  // }
   @media (max-width: 767px) {
-    padding: 0 1rem;
+    display: none;
   }
 }
 .filter-toggle-btn {
@@ -71,6 +74,7 @@
 }
 
 // Filter Container and Sidebar
+
 .filters-sidebar {
   @media (min-width: 1400px) {
     left: 312px;
@@ -80,11 +84,20 @@
     z-index: 10;
   }
 
-  @media (min-width: 768px) and (max-width: 1399px) {
+  @media (min-width: 860px) and (max-width: 1399px) {
     position: sticky;
     top: 1rem;
     height: fit-content;
     z-index: 10;
+    width: 240px; // تقليل العرض
+  }
+
+  @media (min-width: 768px) and (max-width: 859px) {
+    position: sticky;
+    top: 1rem;
+    height: fit-content;
+    z-index: 10;
+    width: 220px; // تقليل العرض أكثر
   }
 
   @media (max-width: 767px) {
@@ -99,13 +112,25 @@
   border-radius: 8px;
   width: 100%;
   
-  @media (min-width: 768px) {
+  @media (min-width: 1400px) {
     width: 298px;
     position: sticky;
     top: 1rem;
   }
 
-  // Mobile styles
+  @media (min-width: 860px) and (max-width: 1399px) {
+    width: 240px;
+    position: sticky;
+    top: 1rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 859px) {
+    width: 220px;
+    position: sticky;
+    top: 1rem;
+  }
+
+  // Mobile styles remain the same
   @media (max-width: 767px) {
     position: fixed;
     top: 0;
@@ -123,6 +148,7 @@
     }
   }
 
+/////
   .filters-header {
     display: flex;
     justify-content: space-between;
@@ -284,8 +310,9 @@
     margin-top: 1rem;
 
     input {
-      width: 70px;
-      padding: 0.25rem 0.5rem;
+      width: 4.3125rem;
+      height: 2.25rem;
+            padding: 0.25rem 0.5rem;
       border: 1px solid #ddd;
       border-radius: 4px;
       font-size: 0.9rem;
@@ -312,30 +339,31 @@
   }
 
   // Rating Stars
+  
   .rate-group {
     display: flex;
     justify-content: space-between;
     gap: 10.25px;
+    img {
+      width: 15px;
+      height: 15px;}
   }
   
   .stars {
     display: flex;
     gap: 2px;
-    
+  
     img {
-      width: 15px;
-      height: 15px;
-
-      &.empty-star {
-        opacity: 0.5;
-      }
-
-      &.black-star {
-        filter: brightness(30%);
+      
+  
+     
+  
+      &.selected-star {
+        content: url("/selectstar.svg"); 
       }
     }
   }
-
+  
   // Discount Text
   .discount-text {
     font-size: 0.9rem;

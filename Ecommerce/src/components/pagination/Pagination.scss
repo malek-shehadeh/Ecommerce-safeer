@@ -3,7 +3,6 @@
 .pagination-container {
     width: 100%;
     margin: 2rem auto;
-    // padding: 0 1rem;
     position: relative;
     z-index: 5;
   
@@ -16,12 +15,10 @@
       height: 55px;
       background-color: rgba(234, 234, 234, 1);
       position: relative;
-    //   border: 1px solid rgba(223, 223, 223, 1);
       border-radius: 4px;
   
       .page-numbers-container {
         display: flex;
-        // gap: 0.5rem;
         position: absolute;
         right: 43px; 
         align-items: center;

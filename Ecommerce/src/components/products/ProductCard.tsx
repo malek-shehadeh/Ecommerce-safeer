@@ -1,5 +1,4 @@
 
-// src/components/products/ProductCard.tsx
 import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToWishlist, removeFromWishlist } from '../../redux/slices/wishlistSlice'

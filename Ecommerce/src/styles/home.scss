@@ -1,4 +1,7 @@
 
+
+//home.tsx
+
 .home-page {
   background-color: #FFFFFF;
 }
@@ -12,11 +15,9 @@
   background-position: center;
   height: 22.313125rem;
 
- 
   .container {
     height: 10.8125rem;
     margin-top: 1.25rem;
-
   }
 
   .hero-content {
@@ -49,7 +50,8 @@
         .subtitle {
           color: #8b185e;
           font-weight: 400;
-          font-size: 2.25rem;        }
+          font-size: 2.25rem;
+        }
       }
       
       .second-line {
@@ -94,13 +96,76 @@
       margin-top: 5px;
     }
   }
+
+  @media (max-width: 64rem) {
+    .hero-content {
+      margin-left: 10rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    padding: 2rem 0;
+    
+    .hero-content {
+      margin-left: 2rem;
+      padding-top: 2rem;
+
+      h1 {
+        font-size: 2rem;
+        .first-line {
+          .subtitle {
+            font-size: 2rem;
+          }
+        }
+        .second-line {
+          .prefix {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    .hero-content {
+      margin-left: 1rem;
+      padding-top: 1rem;
+      
+      h1 {
+        font-size: 1.5rem;
+        .first-line {
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+          margin-bottom: 0.5rem;
+          .subtitle {
+            font-size: 1.5rem;
+          }
+        }
+        .second-line {
+          flex-direction: column;
+          align-items: flex-start;
+          height: auto;
+          .prefix {
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+          }
+          .main-text {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      p {
+        margin-top: 1rem;
+      }
+    }
+  }
 }
 
 // Container Layout
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  // width: 100%;
   
   @media (min-width: 1400px) {
     padding: 0;
@@ -151,8 +216,8 @@
     }
 
     @media (min-width: 768px) and (max-width: 1399px) {
-      padding: 0 2rem;
-      grid-template-columns: 280px 1fr;
+      padding: 0 0.88rem;
+      grid-template-columns: 210px 1fr;
       gap: 2rem;
     }
 
@@ -170,7 +235,6 @@
     z-index: 1;
 
     @media (min-width: 1400px) {
-      // margin: 0 auto;
       max-width: 957px;
     }
   }
@@ -185,7 +249,6 @@
   margin: 0 auto;
   justify-content: center;
   margin-top: 49px;
-
   
   // Mobile first approach
   grid-template-columns: repeat(1, minmax(auto, 13.824375rem));
@@ -203,55 +266,5 @@
   // Desktops and larger
   @media (min-width: 1200px) {
     grid-template-columns: repeat(4, minmax(auto, 13.824375rem));
-  }
-}
-
-
-
-// Responsive Hero
-@media (max-width: 64rem) {
-  .hero {
-    .hero-content {
-      margin-left: 10rem;
-    }
-  }
-}
-
-@media (max-width: 48rem) {
-  .hero {
-    padding: 2rem 0;
-    
-    .hero-content {
-      margin-left: 2rem;
-      padding-top: 2rem;
-
-      h1 {
-        font-size: 2rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-
-      p {
-        max-width: 100%;
-      }
-    }
-  }
-}
-
-@media (max-width: 30rem) {
-  .hero {
-    .hero-content {
-      margin-left: 1rem;
-      
-      h1 {
-        font-size: 1.75rem;
-      }
-      
-      h2 {
-        font-size: 1.25rem;
-      }
-    }
   }
 }

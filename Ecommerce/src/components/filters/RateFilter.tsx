@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react'
 
 interface Props {
@@ -47,17 +48,17 @@ const RateFilter: React.FC<Props> = ({ ratings, selectedRatings, onRateChange })
             />
             <div className="rate-group">
               <div className="stars">
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <img
-                    key={index}
-                    src={index < option.goldStars ? "/star.svg" : "/star (1).svg"}
-                    alt="star"
-                    className={`
-                      ${index < option.goldStars ? 'gold-star' : 'empty-star'}
-                      ${selectedRatings.includes(option.id) && index < option.goldStars ? 'black-star' : ''}
-                    `}
-                  />
-                ))}
+                {Array.from({ length: 5 }).map((_, index) => {
+                  const isSelected = selectedRatings.includes(option.id) && index < option.goldStars;
+                  return (
+                    <img
+                      key={index}
+                      src={isSelected ? "/selectstar.svg" : index < option.goldStars ? "/star.svg" : "/star (1).svg"}
+                      alt="star"
+                      className={`star ${index < option.goldStars ? 'gold-star' : 'empty-star'} ${isSelected ? 'selected-star' : ''}`}
+                    />
+                  );
+                })}
               </div>
               <span className="up-text">{option.label}</span>
             </div>
